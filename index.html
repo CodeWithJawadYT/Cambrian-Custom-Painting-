@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Cambrian Custom Painting — Premium Interior & Exterior Painters
+    </title>
+    <meta
+      name="description"
+      content="Cambrian Custom Painting delivers premium interior, exterior, stucco, and stain services for homes and businesses. Get a free estimate today."
+    />
+    <meta property="og:title" content="Cambrian Custom Painting" />
+    <meta
+      property="og:description"
+      content="Transforming spaces with precision, passion, and vibrant color."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="/__l5e/assets-v1/07faa520-5830-4c14-8bbe-ab88154c2cc5/logo.jpeg"
+    />
+    <link
+      rel="icon"
+      href="/__l5e/assets-v1/07faa520-5830-4c14-8bbe-ab88154c2cc5/logo.jpeg"
+    />
+    <link rel="canonical" href="/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                pink: "#e6398b",
+                purple: "#7a2fb8",
+                blue: "#1ea7d6",
+                green: "#5cc24a",
+                orange: "#f47b20",
+                yellow: "#f9c80e",
+              },
+              ink: "#0e1116",
+            },
+            animation: {
+              "fade-up": "fadeUp 1s cubic-bezier(.16,1,.3,1) both",
+              "fade-in": "fadeIn 1.2s ease both",
+              "pulse-ring": "pulseRing 2.2s cubic-bezier(.4,0,.6,1) infinite",
+              float: "float 6s ease-in-out infinite",
+              gradient: "gradient 8s linear infinite",
+              "spin-slow": "spin 18s linear infinite",
+              reveal: "reveal 1.4s cubic-bezier(.7,0,.3,1) both",
+              "hero-float": "heroFloat 7s ease-in-out infinite",
+              "glow-pulse": "glowPulse 9s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeUp: {
+                "0%": { opacity: 0, transform: "translateY(40px)" },
+                "100%": { opacity: 1, transform: "translateY(0)" },
+              },
+              fadeIn: { "0%": { opacity: 0 }, "100%": { opacity: 1 } },
+              pulseRing: {
+                "0%": { boxShadow: "0 0 0 0 rgba(244,123,32,.55)" },
+                "70%": { boxShadow: "0 0 0 22px rgba(244,123,32,0)" },
+                "100%": { boxShadow: "0 0 0 0 rgba(244,123,32,0)" },
+              },
+              float: {
+                "0%,100%": { transform: "translateY(0) rotate(0)" },
+                "50%": { transform: "translateY(-18px) rotate(2deg)" },
+              },
+              gradient: {
+                "0%,100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+              },
+              reveal: {
+                "0%": { clipPath: "inset(0 100% 0 0)" },
+                "100%": { clipPath: "inset(0 0 0 0)" },
+              },
+              heroFloat: {
+                "0%,100%": { transform: "translateY(0) scale(1)" },
+                "50%": { transform: "translateY(-14px) scale(1.02)" },
+              },
+              glowPulse: {
+                "0%,100%": {
+                  transform: "rotate(0deg) scale(1)",
+                  opacity: 0.55,
+                },
+                "50%": { transform: "rotate(180deg) scale(1.1)", opacity: 0.8 },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Inter, sans-serif;
+        color: #0e1116;
+        background: #fff;
+        overflow-x: hidden;
+      }
+      .brand-gradient {
+        background: linear-gradient(
+          90deg,
+          #e6398b,
+          #7a2fb8,
+          #1ea7d6,
+          #5cc24a,
+          #f47b20
+        );
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .brand-bg {
+        background: linear-gradient(
+          135deg,
+          #e6398b,
+          #7a2fb8 35%,
+          #1ea7d6 65%,
+          #5cc24a
+        );
+        background-size: 300% 300%;
+      }
+      .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(
+          rgba(0, 0, 0, 0.05) 1px,
+          transparent 1px
+        );
+        background-size: 3px 3px;
+        opacity: 0.5;
+      }
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s ease;
+      }
+      .reveal-on-scroll.in {
+        opacity: 1;
+        transform: none;
+      }
+      .card-3d {
+        transition:
+          transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.5s;
+      }
+      .card-3d:hover {
+        transform: translateY(-10px) rotateX(3deg) rotateY(-3deg);
+        box-shadow: 0 30px 60px -20px rgba(122, 47, 184, 0.35);
+      }
+      .service-card .overlay {
+        transform: translateY(100%);
+        transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+      }
+      .service-card:hover .overlay {
+        transform: translateY(0);
+      }
+      .service-card .icon {
+        transition: transform 0.6s;
+      }
+      .service-card:hover .icon {
+        transform: scale(1.15) rotate(-8deg);
+      }
+      .float-label {
+        position: relative;
+      }
+      .float-label input,
+      .float-label textarea {
+        padding: 1.4rem 1rem 0.6rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        width: 100%;
+        background: #fff;
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+        outline: none;
+      }
+      .float-label input:focus,
+      .float-label textarea:focus {
+        border-color: #7a2fb8;
+        box-shadow: 0 0 0 4px rgba(122, 47, 184, 0.12);
+      }
+      .float-label label {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        color: #6b7280;
+        font-size: 1rem;
+        pointer-events: none;
+        transition: 0.2s ease;
+      }
+      .float-label input:focus + label,
+      .float-label input:not(:placeholder-shown) + label,
+      .float-label textarea:focus + label,
+      .float-label textarea:not(:placeholder-shown) + label {
+        top: 0.35rem;
+        font-size: 0.72rem;
+        color: #7a2fb8;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .marquee {
+        display: flex;
+        gap: 3rem;
+        animation: marquee 30s linear infinite;
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .blob {
+        position: absolute;
+        filter: blur(60px);
+        opacity: 0.55;
+        border-radius: 9999px;
+        animation: float 9s ease-in-out infinite;
+      }
+      .hero-img {
+        clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+        transition: transform 1.4s ease;
+      }
+      .parallax {
+        will-change: transform;
+      }
+      /* Floating paint drops */
+      .drop {
+        position: absolute;
+        border-radius: 9999px;
+        background: var(--c);
+        box-shadow: 0 8px 24px -4px
+          color-mix(in srgb, var(--c) 60%, transparent);
+        opacity: 0.85;
+        animation: drift 10s ease-in-out infinite;
+      }
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.85;
+        }
+        50% {
+          transform: translate(20px, -30px) scale(1.15);
+          opacity: 0.55;
+        }
+      }
+      /* Brush stroke draw */
+      .brush-draw {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        animation:
+          draw 2.2s cubic-bezier(0.65, 0, 0.35, 1) 0.6s forwards,
+          hueShift 6s ease-in-out 3s infinite;
+      }
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes hueShift {
+        0%,
+        100% {
+          filter: hue-rotate(0);
+        }
+        50% {
+          filter: hue-rotate(60deg);
+        }
+      }
+      /* Word rotator */
+      #rotator {
+        display: inline-block;
+        will-change: transform, opacity;
+      }
+      .rot-out {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      .rot-in {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- NAV -->
+    <header
+      id="nav"
+      class="fixed top-0 inset-x-0 z-50 transition-all duration-500"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between"
+      >
+        <a href="#top" class="flex items-center gap-3 group">
+          <img
+            src="painting.jpeg"
+            alt="Cambrian Custom Painting logo"
+            class="h-12 w-12 object-contain transition-transform duration-500 group-hover:rotate-12"
+          />
+          <div class="leading-tight">
+            <div
+              class="font-display text-xl font-bold tracking-wide brand-gradient animate-gradient"
+            >
+              CAMBRIAN
+            </div>
+            <div
+              class="text-[10px] tracking-[.3em] text-gray-500 font-semibold"
+            >
+              CUSTOM PAINTING
+            </div>
+          </div>
+        </a>
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700"
+        >
+          <a href="#services" class="hover:text-brand-purple transition"
+            >Services</a
+          >
+          <a href="#gallery" class="hover:text-brand-purple transition"
+            >Gallery</a
+          >
+          <a href="#about" class="hover:text-brand-purple transition">About</a>
+          <a href="#contact" class="hover:text-brand-purple transition"
+            >Contact</a
+          >
+        </nav>
+        <a
+          href="#contact"
+          class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-semibold brand-bg animate-gradient shadow-lg shadow-brand-purple/30 hover:scale-105 transition"
+        >
+          Free Estimate <span aria-hidden>→</span>
+        </a>
+        <button
+          id="menuBtn"
+          class="md:hidden p-2 text-gray-700"
+          aria-label="Menu"
+        >
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 text-gray-700 font-medium"
+      >
+        <a href="#services" class="block">Services</a>
+        <a href="#gallery" class="block">Gallery</a>
+        <a href="#about" class="block">About</a>
+        <a href="#contact" class="block">Contact</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      id="top"
+      class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden grain"
+    >
+      <div
+        class="blob brand-bg animate-gradient"
+        style="width: 520px; height: 520px; top: -120px; left: -120px"
+      ></div>
+      <div
+        class="blob brand-bg animate-gradient"
+        style="
+          width: 420px;
+          height: 420px;
+          bottom: -120px;
+          right: -100px;
+          animation-delay: -3s;
+        "
+      ></div>
+
+      <!-- Floating paint-drop particles -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <span
+          class="drop"
+          style="
+            --c: #e6398b;
+            left: 8%;
+            top: 20%;
+            width: 14px;
+            height: 14px;
+            animation-delay: 0s;
+          "
+        ></span>
+        <span
+          class="drop"
+          style="
+            --c: #1ea7d6;
+            left: 18%;
+            top: 75%;
+            width: 22px;
+            height: 22px;
+            animation-delay: -2s;
+          "
+        ></span>
+        <span
+          class="drop"
+          style="
+            --c: #f9c80e;
+            left: 42%;
+            top: 14%;
+            width: 10px;
+            height: 10px;
+            animation-delay: -4s;
+          "
+        ></span>
+        <span
+          class="drop"
+          style="
+            --c: #5cc24a;
+            left: 55%;
+            top: 82%;
+            width: 18px;
+            height: 18px;
+            animation-delay: -1s;
+          "
+        ></span>
+        <span
+          class="drop"
+          style="
+            --c: #7a2fb8;
+            left: 72%;
+            top: 18%;
+            width: 12px;
+            height: 12px;
+            animation-delay: -3s;
+          "
+        ></span>
+        <span
+          class="drop"
+          style="
+            --c: #f47b20;
+            left: 88%;
+            top: 62%;
+            width: 20px;
+            height: 20px;
+            animation-delay: -5s;
+          "
+        ></span>
+        <span
+          class="drop"
+          style="
+            --c: #e6398b;
+            left: 32%;
+            top: 55%;
+            width: 8px;
+            height: 8px;
+            animation-delay: -6s;
+          "
+        ></span>
+        <span
+          class="drop"
+          style="
+            --c: #1ea7d6;
+            left: 65%;
+            top: 42%;
+            width: 10px;
+            height: 10px;
+            animation-delay: -2.5s;
+          "
+        ></span>
+      </div>
+
+      <div
+        class="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <div>
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white/70 backdrop-blur text-xs font-semibold text-gray-600 animate-fade-in"
+          >
+            <span
+              class="h-2 w-2 rounded-full bg-brand-green animate-pulse"
+            ></span>
+            Now booking summer projects
+          </div>
+          <h1
+            class="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight"
+          >
+            <span class="block animate-fade-up">Premium</span>
+            <span
+              class="block relative animate-fade-up"
+              style="animation-delay: 0.15s"
+            >
+              <span class="brand-gradient animate-gradient"
+                >Custom Painting</span
+              >
+              <!-- animated hand-drawn brush underline -->
+              <svg
+                class="absolute -bottom-3 left-0 w-full h-4"
+                viewBox="0 0 600 20"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12 C 150 2, 300 18, 595 8"
+                  stroke="url(#bg)"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  pathLength="1"
+                  class="brush-draw"
+                />
+                <defs>
+                  <linearGradient id="bg" x1="0" x2="1">
+                    <stop offset="0" stop-color="#e6398b" />
+                    <stop offset=".25" stop-color="#7a2fb8" />
+                    <stop offset=".5" stop-color="#1ea7d6" />
+                    <stop offset=".75" stop-color="#5cc24a" />
+                    <stop offset="1" stop-color="#f47b20" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            <!-- Rotating action word -->
+            <span
+              class="block mt-2 animate-fade-up"
+              style="animation-delay: 0.3s"
+            >
+              for your
+              <span
+                class="relative inline-block align-baseline overflow-hidden h-[1.05em] w-[5.4ch] text-left"
+              >
+                <span
+                  id="rotator"
+                  class="absolute inset-0 brand-gradient animate-gradient transition-transform duration-500"
+                  >home</span
+                >
+              </span>
+            </span>
+          </h1>
+          <p
+            class="mt-6 text-lg text-gray-600 max-w-xl animate-fade-up"
+            style="animation-delay: 0.5s"
+          >
+            Transforming spaces with precision, passion, and vibrant color.
+            Residential, commercial, and hospitality finishes — done right the
+            first time.
+          </p>
+          <div
+            class="mt-9 flex flex-wrap items-center gap-4 animate-fade-up"
+            style="animation-delay: 0.65s"
+          >
+            <a
+              href="#contact"
+              class="relative inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold brand-bg animate-gradient animate-pulse-ring shadow-xl hover:scale-105 transition"
+            >
+              Get a Free Estimate
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="tel:4033831092"
+              class="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-gray-200 hover:border-brand-purple hover:text-brand-purple font-semibold transition"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.88.7 2.77a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.31-1.27a2 2 0 0 1 2.11-.45c.89.34 1.82.57 2.77.7A2 2 0 0 1 22 16.92Z"
+                />
+              </svg>
+              403-383-1092
+            </a>
+          </div>
+          <div
+            class="mt-12 grid grid-cols-3 gap-6 max-w-md animate-fade-up"
+            style="animation-delay: 0.8s"
+          >
+            <div>
+              <div
+                class="text-3xl font-display font-bold brand-gradient animate-gradient"
+              >
+                15+
+              </div>
+              <div class="text-xs text-gray-500 mt-1">Years experience</div>
+            </div>
+            <div>
+              <div
+                class="text-3xl font-display font-bold brand-gradient animate-gradient"
+              >
+                800+
+              </div>
+              <div class="text-xs text-gray-500 mt-1">Projects completed</div>
+            </div>
+            <div>
+              <div
+                class="text-3xl font-display font-bold brand-gradient animate-gradient"
+              >
+                100%
+              </div>
+              <div class="text-xs text-gray-500 mt-1">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative parallax" data-speed="0.12">
+          <!-- soft radial color glow that pulses -->
+          <div
+            class="absolute inset-0 -m-10 rounded-full opacity-70 blur-3xl animate-glow-pulse"
+            style="
+              background: conic-gradient(
+                from 0deg,
+                #e6398b,
+                #f47b20,
+                #f9c80e,
+                #5cc24a,
+                #1ea7d6,
+                #7a2fb8,
+                #e6398b
+              );
+            "
+          ></div>
+          <!-- floating hero artwork -->
+          <div class="relative animate-hero-float">
+            <img
+              src="painting.jpeg"
+              alt="Painter in white coveralls spraying a vibrant wave of liquid 3D paint colors onto a white wall"
+              class="relative w-full max-w-[640px] mx-auto drop-shadow-[0_30px_60px_rgba(122,47,184,0.25)] select-none"
+              draggable="false"
+            />
+            <!-- color-shifting tint overlay -->
+            <div
+              class="pointer-events-none absolute inset-0 mix-blend-overlay opacity-30 animate-gradient brand-bg rounded-3xl"
+            ></div>
+          </div>
+          <div
+            class="absolute -bottom-4 -left-2 sm:-left-6 bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-3 animate-float z-10"
+          >
+            <img
+              src="painting.jpeg"
+              alt=""
+              class="h-10 w-10"
+            />
+            <div>
+              <div class="text-[10px] text-gray-500 uppercase tracking-widest">
+                Trusted by
+              </div>
+              <div class="font-semibold text-sm">
+                Homes • Hotels • Restaurants
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute -top-2 -right-2 sm:-right-6 bg-white rounded-2xl shadow-2xl px-4 py-3 animate-float z-10"
+            style="animation-delay: -2s"
+          >
+            <div
+              class="flex items-center gap-1 text-brand-yellow text-lg leading-none"
+            >
+              ★★★★★
+            </div>
+            <div
+              class="text-[10px] text-gray-500 mt-1 uppercase tracking-widest"
+            >
+              5.0 client rating
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="#services"
+        class="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-400 text-xs tracking-widest flex flex-col items-center gap-2 animate-fade-in"
+        style="animation-delay: 1s"
+      >
+        SCROLL
+        <span
+          class="block w-px h-10 bg-gradient-to-b from-gray-400 to-transparent"
+        ></span>
+      </a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="border-y border-gray-100 bg-gray-50 py-5 overflow-hidden">
+      <div
+        class="marquee whitespace-nowrap text-gray-400 font-display text-2xl"
+      >
+        <span>Interior</span><span>•</span><span>Exterior</span><span>•</span
+        ><span>Stucco Removal</span><span>•</span><span>Stain & Varnish</span
+        ><span>•</span><span>Hospitality</span><span>•</span
+        ><span>New Construction</span><span>•</span> <span>Interior</span
+        ><span>•</span><span>Exterior</span><span>•</span
+        ><span>Stucco Removal</span><span>•</span><span>Stain & Varnish</span
+        ><span>•</span><span>Hospitality</span><span>•</span
+        ><span>New Construction</span><span>•</span>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section
+      id="services"
+      class="relative py-28 px-6 lg:px-10 max-w-7xl mx-auto"
+    >
+      <div class="text-center max-w-2xl mx-auto reveal-on-scroll">
+        <div class="text-xs tracking-[.4em] font-semibold text-brand-purple">
+          WHAT WE DO
+        </div>
+        <h2 class="mt-4 font-display text-4xl sm:text-5xl font-bold">
+          Crafted finishes for every
+          <span class="brand-gradient animate-gradient">surface</span>
+        </h2>
+        <p class="mt-4 text-gray-600">
+          From boutique homes to hotel rebrands, every project gets the same
+          obsessive attention to prep, product, and finish.
+        </p>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- card template -->
+        <article
+          class="service-card card-3d reveal-on-scroll group relative overflow-hidden rounded-3xl bg-white border border-gray-100 p-8 shadow-sm"
+        >
+          <div
+            class="icon w-14 h-14 rounded-2xl brand-bg animate-gradient flex items-center justify-center text-white text-2xl"
+          >
+            🏠
+          </div>
+          <h3 class="mt-6 font-display text-2xl font-bold">
+            Interior Painting
+          </h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Flawless walls, ceilings, trim, and feature accents with premium
+            low-VOC paints.
+          </p>
+          <div
+            class="overlay absolute inset-x-0 bottom-0 brand-bg animate-gradient text-white px-8 py-6 text-sm"
+          >
+            Detailed prep • Clean lines • Furniture protection • Same-day
+            cleanup
+          </div>
+        </article>
+
+        <article
+          class="service-card card-3d reveal-on-scroll group relative overflow-hidden rounded-3xl bg-white border border-gray-100 p-8 shadow-sm"
+        >
+          <div
+            class="icon w-14 h-14 rounded-2xl brand-bg animate-gradient flex items-center justify-center text-white text-2xl"
+          >
+            🏡
+          </div>
+          <h3 class="mt-6 font-display text-2xl font-bold">
+            Exterior Painting
+          </h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Weather-resistant systems that protect siding, stucco, and trim for
+            years to come.
+          </p>
+          <div
+            class="overlay absolute inset-x-0 bottom-0 brand-bg animate-gradient text-white px-8 py-6 text-sm"
+          >
+            Power wash • Repairs • Primer + 2 coats • Warrantied finish
+          </div>
+        </article>
+
+        <article
+          class="service-card card-3d reveal-on-scroll group relative overflow-hidden rounded-3xl bg-white border border-gray-100 p-8 shadow-sm"
+        >
+          <div
+            class="icon w-14 h-14 rounded-2xl brand-bg animate-gradient flex items-center justify-center text-white text-2xl"
+          >
+            🧱
+          </div>
+          <h3 class="mt-6 font-display text-2xl font-bold">Stucco Removal</h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Smooth-ceiling conversions with full containment and dust-controlled
+            removal.
+          </p>
+          <div
+            class="overlay absolute inset-x-0 bottom-0 brand-bg animate-gradient text-white px-8 py-6 text-sm"
+          >
+            Asbestos-aware • Clean containment • Skim & finish coat
+          </div>
+        </article>
+
+        <article
+          class="service-card card-3d reveal-on-scroll group relative overflow-hidden rounded-3xl bg-white border border-gray-100 p-8 shadow-sm"
+        >
+          <div
+            class="icon w-14 h-14 rounded-2xl brand-bg animate-gradient flex items-center justify-center text-white text-2xl"
+          >
+            🪵
+          </div>
+          <h3 class="mt-6 font-display text-2xl font-bold">Stain & Varnish</h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Rich, hand-rubbed wood finishes for decks, doors, railings, and
+            cabinetry.
+          </p>
+          <div
+            class="overlay absolute inset-x-0 bottom-0 brand-bg animate-gradient text-white px-8 py-6 text-sm"
+          >
+            Sand • Tone match • UV-protective top coat
+          </div>
+        </article>
+
+        <article
+          class="service-card card-3d reveal-on-scroll group relative overflow-hidden rounded-3xl bg-white border border-gray-100 p-8 shadow-sm"
+        >
+          <div
+            class="icon w-14 h-14 rounded-2xl brand-bg animate-gradient flex items-center justify-center text-white text-2xl"
+          >
+            🏨
+          </div>
+          <h3 class="mt-6 font-display text-2xl font-bold">
+            Hotels / Motels / Restaurants
+          </h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            After-hours commercial repaints with zero guest disruption and
+            brand-perfect color match.
+          </p>
+          <div
+            class="overlay absolute inset-x-0 bottom-0 brand-bg animate-gradient text-white px-8 py-6 text-sm"
+          >
+            Night crews • Fast turnaround • Insured & WCB
+          </div>
+        </article>
+
+        <article
+          class="service-card card-3d reveal-on-scroll group relative overflow-hidden rounded-3xl bg-white border border-gray-100 p-8 shadow-sm"
+        >
+          <div
+            class="icon w-14 h-14 rounded-2xl brand-bg animate-gradient flex items-center justify-center text-white text-2xl"
+          >
+            🏗️
+          </div>
+          <h3 class="mt-6 font-display text-2xl font-bold">
+            New Constructions
+          </h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Builder-grade efficiency without the builder-grade finish — spray,
+            back-roll, perfection.
+          </p>
+          <div
+            class="overlay absolute inset-x-0 bottom-0 brand-bg animate-gradient text-white px-8 py-6 text-sm"
+          >
+            Trade-friendly schedule • Crew scalable • Punch-list ready
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section
+      id="gallery"
+      class="relative py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div
+          class="flex items-end justify-between flex-wrap gap-6 reveal-on-scroll"
+        >
+          <div class="max-w-xl">
+            <div
+              class="text-xs tracking-[.4em] font-semibold text-brand-purple"
+            >
+              OUR CRAFT
+            </div>
+            <h2 class="mt-4 font-display text-4xl sm:text-5xl font-bold">
+              A palette of
+              <span class="brand-gradient animate-gradient">possibilities</span>
+            </h2>
+          </div>
+          <p class="text-gray-600 max-w-md">
+            From color consultation to the final clean stroke, every project is
+            documented and treated like our own.
+          </p>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="reveal-on-scroll md:row-span-2 group relative overflow-hidden rounded-3xl shadow-xl"
+          >
+            <img
+              src="color.jpg"
+              alt="Open cans of premium paint in vivid orange, blue, yellow, red and green"
+              class="w-full h-full object-cover min-h-[440px] transition-transform duration-1000 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-8 text-white">
+              <div class="text-xs tracking-widest opacity-80">01 / COLOR</div>
+              <h3 class="font-display text-3xl font-bold mt-2">
+                Premium color & materials
+              </h3>
+              <p class="text-sm opacity-90 mt-2 max-w-xs">
+                Benjamin Moore, Sherwin-Williams and Behr — color-matched to
+                your vision.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="reveal-on-scroll group relative overflow-hidden rounded-3xl shadow-xl"
+          >
+            <img
+              src="painter.jpg"
+              alt="Painter in protective suit spray-finishing wainscoted wall"
+              class="w-full h-72 object-cover transition-transform duration-1000 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 text-white">
+              <div class="text-xs tracking-widest opacity-80">
+                02 / PRECISION
+              </div>
+              <h3 class="font-display text-2xl font-bold mt-1">
+                Spray-grade finishing
+              </h3>
+            </div>
+          </div>
+
+          <div
+            class="reveal-on-scroll group relative overflow-hidden rounded-3xl shadow-xl"
+          >
+            <img
+              src="paint.jpeg"
+              alt="Cambrian Custom Painting brand logo on textured deep purple background"
+              class="w-full h-72 object-cover transition-transform duration-1000 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 p-6 text-white">
+              <div class="text-xs tracking-widest opacity-80">03 / BRAND</div>
+              <h3 class="font-display text-2xl font-bold mt-1">
+                Painted with heart
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / CTA STRIP -->
+    <section id="about" class="relative py-28 px-6 lg:px-10 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="reveal-on-scroll relative">
+          <div
+            class="absolute -inset-4 brand-bg animate-gradient opacity-20 blur-2xl rounded-3xl"
+          ></div>
+          <img
+            src="color.jpg"
+            alt="Vibrant paint cans"
+            class="relative rounded-3xl shadow-2xl w-full object-cover h-[480px]"
+          />
+        </div>
+        <div class="reveal-on-scroll">
+          <div class="text-xs tracking-[.4em] font-semibold text-brand-purple">
+            WHY CAMBRIAN
+          </div>
+          <h2
+            class="mt-4 font-display text-4xl sm:text-5xl font-bold leading-tight"
+          >
+            Painters who treat your space
+            <span class="brand-gradient animate-gradient">like a canvas</span>.
+          </h2>
+          <p class="mt-5 text-gray-600">
+            Fifteen years of refining brushstrokes, processes, and people. We
+            show up on time, protect every surface, and leave you with a finish
+            you'll brag about.
+          </p>
+          <ul class="mt-8 space-y-4">
+            <li class="flex gap-3">
+              <span
+                class="mt-1 h-6 w-6 rounded-full brand-bg animate-gradient flex items-center justify-center text-white text-xs"
+                >✓</span
+              ><span
+                ><b>Fully insured & WCB-covered</b> crews on every job.</span
+              >
+            </li>
+            <li class="flex gap-3">
+              <span
+                class="mt-1 h-6 w-6 rounded-full brand-bg animate-gradient flex items-center justify-center text-white text-xs"
+                >✓</span
+              ><span
+                ><b>2-year workmanship warranty</b> on every interior
+                repaint.</span
+              >
+            </li>
+            <li class="flex gap-3">
+              <span
+                class="mt-1 h-6 w-6 rounded-full brand-bg animate-gradient flex items-center justify-center text-white text-xs"
+                >✓</span
+              ><span
+                ><b>Free in-home color consults</b> — no pressure, no
+                upcharge.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="relative py-28 px-6 lg:px-10 overflow-hidden">
+      <div class="absolute inset-0 brand-bg animate-gradient opacity-95"></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,.25),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,.2),transparent_45%)]"
+      ></div>
+      <div
+        class="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-start"
+      >
+        <div class="text-white reveal-on-scroll">
+          <div class="text-xs tracking-[.4em] font-semibold text-white/80">
+            GET IN TOUCH
+          </div>
+          <h2 class="mt-4 font-display text-4xl sm:text-5xl font-bold">
+            Ready for a finish that lasts?
+          </h2>
+          <p class="mt-4 text-white/90 max-w-md">
+            Tell us about your space and we'll respond within one business day
+            with a free, no-obligation estimate.
+          </p>
+          <div class="mt-10 space-y-5">
+            <a href="tel:4033831092" class="flex items-center gap-4 group">
+              <span
+                class="h-12 w-12 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center group-hover:bg-white/25 transition"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.95.36 1.88.7 2.77a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.31-1.27a2 2 0 0 1 2.11-.45c.89.34 1.82.57 2.77.7A2 2 0 0 1 22 16.92Z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <div class="text-xs uppercase tracking-widest text-white/70">
+                  Call us
+                </div>
+                <div class="text-lg font-semibold">403-383-1092</div>
+              </div>
+            </a>
+            <a
+              href="mailto:info@cambriancustompainting.com"
+              class="flex items-center gap-4 group"
+            >
+              <span
+                class="h-12 w-12 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center group-hover:bg-white/25 transition"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <path d="m22 6-10 7L2 6" />
+                </svg>
+              </span>
+              <div>
+                <div class="text-xs uppercase tracking-widest text-white/70">
+                  Email
+                </div>
+                <div class="text-lg font-semibold break-all">
+                  info@cambriancustompainting.com
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form
+          id="contactForm"
+          class="reveal-on-scroll bg-white rounded-3xl shadow-2xl p-8 space-y-5"
+          novalidate
+        >
+          <h3 class="font-display text-2xl font-bold">
+            Request a free estimate
+          </h3>
+          <div class="float-label">
+            <input id="f-name" type="text" placeholder=" " required /><label
+              for="f-name"
+              >Full name</label
+            >
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="float-label">
+              <input id="f-email" type="email" placeholder=" " required /><label
+                for="f-email"
+                >Email</label
+              >
+            </div>
+            <div class="float-label">
+              <input id="f-phone" type="tel" placeholder=" " /><label
+                for="f-phone"
+                >Phone</label
+              >
+            </div>
+          </div>
+          <div class="float-label">
+            <input id="f-service" type="text" placeholder=" " /><label
+              for="f-service"
+              >Service (Interior, Exterior, …)</label
+            >
+          </div>
+          <div class="float-label">
+            <textarea id="f-msg" rows="4" placeholder=" "></textarea
+            ><label for="f-msg">Tell us about your project</label>
+          </div>
+          <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full text-white font-semibold brand-bg animate-gradient shadow-lg hover:scale-[1.02] transition"
+          >
+            Send request
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </button>
+          <div id="formSuccess" class="hidden text-center py-6">
+            <div
+              class="mx-auto h-14 w-14 rounded-full brand-bg animate-gradient flex items-center justify-center text-white text-2xl animate-fade-up"
+            >
+              ✓
+            </div>
+            <p class="mt-3 font-semibold text-lg animate-fade-up">
+              Thanks — we'll be in touch within 1 business day.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-ink text-gray-400 py-12 px-6 lg:px-10">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <div class="flex items-center gap-3">
+            <img
+              src="/__l5e/assets-v1/07faa520-5830-4c14-8bbe-ab88154c2cc5/logo.jpeg"
+              alt=""
+              class="h-10 w-10"
+            />
+            <div>
+              <div class="font-display font-bold text-white tracking-wide">
+                CAMBRIAN
+              </div>
+              <div class="text-[10px] tracking-[.3em] text-gray-500">
+                CUSTOM PAINTING
+              </div>
+            </div>
+          </div>
+          <p class="mt-4 text-sm max-w-xs">
+            Premium interior, exterior, and commercial painting services.
+          </p>
+        </div>
+        <div>
+          <div class="text-white font-semibold mb-3">Services</div>
+          <ul class="space-y-2 text-sm">
+            <li>Interior painting</li>
+            <li>Exterior painting</li>
+            <li>Stucco removal</li>
+            <li>Stain & varnish</li>
+            <li>Hotels • Motels • Restaurants</li>
+            <li>New constructions</li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-white font-semibold mb-3">Contact</div>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a class="hover:text-white" href="tel:4033831092">403-383-1092</a>
+            </li>
+            <li>
+              <a
+                class="hover:text-white break-all"
+                href="mailto:info@cambriancustompainting.com"
+                >info@cambriancustompainting.com</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/10 text-xs flex flex-wrap gap-3 justify-between"
+      >
+        <div>
+          © <span id="yr"></span> Cambrian Custom Painting. All rights reserved.
+        </div>
+        <div>Crafted with passion & precision.</div>
+      </div>
+    </footer>
+
+    <script>
+      // year
+      document.getElementById("yr").textContent = new Date().getFullYear();
+
+      // Hero word rotator
+      (function () {
+        const el = document.getElementById("rotator");
+        if (!el) return;
+        const words = ["home", "office", "hotel", "space", "vision"];
+        let i = 0;
+        setInterval(() => {
+          el.style.transition = "transform .45s ease, opacity .45s ease";
+          el.style.transform = "translateY(-100%)";
+          el.style.opacity = "0";
+          setTimeout(() => {
+            i = (i + 1) % words.length;
+            el.textContent = words[i];
+            el.style.transition = "none";
+            el.style.transform = "translateY(100%)";
+            el.style.opacity = "0";
+            requestAnimationFrame(() => {
+              el.style.transition = "transform .45s ease, opacity .45s ease";
+              el.style.transform = "translateY(0)";
+              el.style.opacity = "1";
+            });
+          }, 450);
+        }, 2400);
+      })();
+
+      // mobile menu
+      const mb = document.getElementById("menuBtn"),
+        mm = document.getElementById("mobileMenu");
+      mb.addEventListener("click", () => mm.classList.toggle("hidden"));
+      mm.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => mm.classList.add("hidden")),
+      );
+
+      // nav scroll
+      const nav = document.getElementById("nav");
+      const onScroll = () => {
+        if (window.scrollY > 20)
+          nav.classList.add("bg-white/85", "backdrop-blur", "shadow-sm");
+        else nav.classList.remove("bg-white/85", "backdrop-blur", "shadow-sm");
+        // parallax
+        document.querySelectorAll(".parallax").forEach((el) => {
+          const s = parseFloat(el.dataset.speed || 0.1);
+          el.style.transform = `translateY(${window.scrollY * s * -1}px)`;
+        });
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      // reveal on scroll
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document
+        .querySelectorAll(".reveal-on-scroll")
+        .forEach((el) => io.observe(el));
+
+      // form
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("f-name").value.trim();
+        const email = document.getElementById("f-email").value.trim();
+        if (!name || !email) {
+          form.reportValidity();
+          return;
+        }
+        Array.from(form.children).forEach((c) => {
+          if (c.id !== "formSuccess") c.classList.add("hidden");
+        });
+        document.getElementById("formSuccess").classList.remove("hidden");
+      });
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "PaintingService",
+        "name": "Cambrian Custom Painting",
+        "telephone": "+1-403-383-1092",
+        "email": "info@cambriancustompainting.com",
+        "image": "/__l5e/assets-v1/07faa520-5830-4c14-8bbe-ab88154c2cc5/logo.jpeg",
+        "description": "Premium interior, exterior, stucco removal, stain & varnish, hospitality and new-construction painting services.",
+        "areaServed": "Alberta, Canada"
+      }
+    </script>
+  </body>
+</html>
